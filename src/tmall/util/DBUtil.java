@@ -11,7 +11,7 @@ public class DBUtil {
 	private static String database="tmall";
 	private static String encoding="UTF-8";
 	private static String user="root";
-	private static String password="root";
+	private static String password="363205";
 	private static String driver="com.mysql.jdbc.Driver";
 	
 	

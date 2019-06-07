@@ -1,7 +1,7 @@
 package tmall.bean;
 
 import java.util.List;
-
+import tmall.bean.Product;
 
 public class Category {
 	private int id;

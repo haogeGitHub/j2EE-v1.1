@@ -3,7 +3,7 @@ package tmall.bean;
 public class ProductImage {
 	private int id;
 	private String type;//图片类型，分单个图片和详情图片两种
-	private Product product;
+	private Product product;//图片所属的产品
 	
 	
 	public int getId() {

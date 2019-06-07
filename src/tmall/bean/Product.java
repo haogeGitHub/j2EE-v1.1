@@ -3,6 +3,7 @@ package tmall.bean;
 import java.util.Date;
 import java.util.List;
 
+
 public class Product {
 	private int id;
 	private String name;
@@ -11,6 +12,7 @@ public class Product {
 	private float promotePrice;//优惠价格
 	private int stock;//库存
 	private Date createDate;
+	private Category category;
 	private ProductImage firstProductImage;//从productSingleImages集合中取出第一个来，用于显示这个产品的默认图片
 	private List<ProductImage> productImages;
 	private List<ProductImage> productSingleImages;//单个产品图片集合
@@ -95,6 +97,12 @@ public class Product {
 	}
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
 }

@@ -10,7 +10,7 @@ import java.util.List;
 import tmall.bean.Category;
 import tmall.util.DBUtil;
 
-public class CategoryDao {
+public class CategoryDAO {
 	
 	//增
 	public void add(Category bean){
@@ -59,7 +59,7 @@ public class CategoryDao {
 	
 	//改
 	public void update(Category bean){
-		String sql="update category set naame=? where id=?";
+		String sql="update category set name=? where id=?";
 		
 		try {
 			//获取连接
@@ -78,7 +78,7 @@ public class CategoryDao {
 	}
 	
 	//查-ById
-	public Category getById(int id){
+	public Category get(int id){
 		
 		Category bean=null;
 		
@@ -106,7 +106,7 @@ public class CategoryDao {
 		return bean;
 	}
 	//查-分页
-	public List<Category> getListForPage(int start,int count){
+	public List<Category> list(int start,int count){
 		List<Category> list=new ArrayList<Category>();
 		
 		String sql="select * from category order by id desc limit ?,?";
@@ -118,7 +118,7 @@ public class CategoryDao {
 			PreparedStatement ps=con.prepareStatement(sql);			
 			//配置参数
 			ps.setInt(1,start);
-			ps.setInt(1,count);
+			ps.setInt(2,count);
 			//执行
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){
@@ -137,12 +137,12 @@ public class CategoryDao {
 		return list;
 	}
 	//查-All
-	public List<Category> getListForAll(){
-		return getListForPage(0,Short.MAX_VALUE);
+	public List<Category> list(){
+		return list(0,Short.MAX_VALUE);
 	}
 	//查-总数
-	public int getToal(){
-		int toal=0;
+	public int getTotal(){
+		int total=0;
 		String sql="select count(*) from category";
 		
 		try {
@@ -154,12 +154,12 @@ public class CategoryDao {
 			//执行
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){
-				toal=rs.getInt(1);
+				total=rs.getInt(1);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-		return toal;
+		return total;
 	}
 }

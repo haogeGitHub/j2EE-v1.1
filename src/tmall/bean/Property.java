@@ -3,7 +3,7 @@ package tmall.bean;
 public class Property {
 	private int id;
 	private String name;
-	private Category category;
+	private Category category;//属性所属分类
 	public int getId() {
 		return id;
 	}
