@@ -23,33 +23,35 @@ public class Order {
 	private int totalNumber;
 	private String status;
 	
+	
 	public String getStatusDesc(){
-		String desc ="Î´Öª";
+		String desc ="æœªçŸ¥";
 		switch(status){
 //			case OrderDAO.waitPay:
-//				desc="´ı¸¶¿î";
+//				desc="å¾…ä»˜æ¬¾";
 //				break;
 //			case OrderDAO.waitDelivery:
-//				desc="´ı·¢»õ";
+//				desc="å¾…å‘è´§";
 //				break;
 //			case OrderDAO.waitConfirm:
-//				desc="´ıÊÕ»õ";
+//				desc="å¾…æ”¶è´§";
 //				break;
 //			case OrderDAO.waitReview:
-//				desc="µÈÆÀ¼Û";
+//				desc="ç­‰è¯„ä»·";
 //				break;
 //			case OrderDAO.finish:
-//				desc="Íê³É";
+//				desc="å®Œæˆ";
 //				break;
 //			case OrderDAO.delete:
-//				desc="„h³ı";
+//				desc="åˆªé™¤";
 //				break;
 //			default:
-//				desc="Î´Öª";
+//				desc="æœªçŸ¥";
 		}
 		return desc;
 	}
 	
+
 	public int getId() {
 		return id;
 	}
@@ -70,6 +72,7 @@ public class Order {
 		this.post = post;
 	}
 
+	
 	public String getMobile() {
 		return mobile;
 	}

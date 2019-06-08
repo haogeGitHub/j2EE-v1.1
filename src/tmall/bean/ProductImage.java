@@ -1,17 +1,20 @@
 package tmall.bean;
 
 public class ProductImage {
+	
+	private String type;
+	private Product product;
 	private int id;
-	private String type;//图片类型，分单个图片和详情图片两种
-	private Product product;//图片所属的产品
-	
-	
+
 	public int getId() {
 		return id;
 	}
+	
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getType() {
 		return type;
 	}
@@ -24,6 +27,4 @@ public class ProductImage {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	
 }

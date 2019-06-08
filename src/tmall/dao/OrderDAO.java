@@ -1,6 +1,9 @@
 package tmall.dao;
 
+
 import java.sql.Connection;
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,6 +44,7 @@ public class OrderDAO {
  
     public void add(Order bean) {
 
+
         String sql = "insert into order_ values(null,?,?,?,?,?,?,?,?,?,?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
  
@@ -73,9 +77,11 @@ public class OrderDAO {
  
     public void update(Order bean) {
 
+    	
         String sql = "update order_ set address= ?, post=?, receiver=?,mobile=?,userMessage=? ,createDate = ? , payDate =? , deliveryDate =?, confirmDate = ? , orderCode =?, uid=?, status=? where id = ?";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
  
+        	
             ps.setString(1, bean.getAddress());
             ps.setString(2, bean.getPost());
             ps.setString(3, bean.getReceiver());
@@ -115,6 +121,8 @@ public class OrderDAO {
     public Order get(int id) {
         Order bean = new Order();
  
+
+        
         try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
  
             String sql = "select * from Order_ where id = " + id;
@@ -135,6 +143,7 @@ public class OrderDAO {
                 Date deliveryDate = DateUtil.t2d( rs.getTimestamp("deliveryDate"));
                 Date confirmDate = DateUtil.t2d( rs.getTimestamp("confirmDate"));
                 
+
                 bean.setOrderCode(orderCode);
                 bean.setAddress(address);
                 bean.setPost(post);

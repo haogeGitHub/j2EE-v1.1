@@ -10,19 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import tmall.bean.Category;
 import tmall.util.Page;
 
-public class CategoryServlet extends BaseServlet {
+public class CategoryServlet extends BaseBackServlet {
 	
 	public String list(HttpServletRequest req, HttpServletResponse res,Page page){
-	    PrintWriter pw = null;
-		try {
-			pw = res.getWriter();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    pw.println("haoge");
-	    
-	    
+//	    PrintWriter pw = null;
+//		try {
+//			pw = res.getWriter();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	    pw.println("haoge");
 	    
 	    //≤È—Ø
 	    List<Category> cs=categoryDAO.list(page.getStart(), page.getCount());
@@ -34,4 +32,5 @@ public class CategoryServlet extends BaseServlet {
 	    
 	    return "admin/listCategory.jsp";
 	}
+
 }

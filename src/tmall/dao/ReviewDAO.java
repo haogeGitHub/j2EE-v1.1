@@ -1,5 +1,6 @@
 package tmall.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,6 +52,8 @@ public class ReviewDAO {
     }
  
     public void add(Review bean) {
+
+
 
         String sql = "insert into Review values(null,?,?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
@@ -124,6 +127,7 @@ public class ReviewDAO {
                 Product product = new ProductDAO().get(pid);
                 User user = new UserDAO().get(uid);
                 
+                
                 bean.setContent(content);
                 bean.setCreateDate(createDate);
                 bean.setProduct(product);
@@ -184,6 +188,7 @@ public class ReviewDAO {
                 Product product = new ProductDAO().get(pid);
                 User user = new UserDAO().get(uid);
                 
+                
                 bean.setContent(content);
                 bean.setCreateDate(createDate);
                 bean.setId(id);     
@@ -199,12 +204,14 @@ public class ReviewDAO {
     }
 	public boolean isExist(String content, int pid) {
 		
+		 
 		String sql = "select * from Review where content = ? and pid = ?";
 		
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
         	ps.setString(1, content);
         	ps.setInt(2, pid);
             
+ 
             ResultSet rs = ps.executeQuery();
  
             if (rs.next()) {
@@ -216,6 +223,7 @@ public class ReviewDAO {
             e.printStackTrace();
         }
 
+		
 		return false;
 	}
  

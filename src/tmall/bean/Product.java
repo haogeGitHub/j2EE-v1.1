@@ -1,67 +1,25 @@
 package tmall.bean;
 
 import java.util.Date;
+
 import java.util.List;
 
-
 public class Product {
-	private int id;
 	private String name;
-	private String subTitle;//子标题
-	private float orignalPrice;//原价
-	private float promotePrice;//优惠价格
-	private int stock;//库存
+	private String subTitle;
+	private float orignalPrice;
+	private float promotePrice;
+	private int stock;
 	private Date createDate;
 	private Category category;
-	private ProductImage firstProductImage;//从productSingleImages集合中取出第一个来，用于显示这个产品的默认图片
+	private int id;
+	private ProductImage firstProductImage;
 	private List<ProductImage> productImages;
-	private List<ProductImage> productSingleImages;//单个产品图片集合
-    private List<ProductImage> productDetailImages;//详情产品集合
-    private int reviewCount;//评价数量
-    private int saleCount;//销售数量
-	
-    public ProductImage getFirstProductImage() {
-		return firstProductImage;
-	}
-	public void setFirstProductImage(ProductImage firstProductImage) {
-		this.firstProductImage = firstProductImage;
-	}
-	public List<ProductImage> getProductImages() {
-		return productImages;
-	}
-	public void setProductImages(List<ProductImage> productImages) {
-		this.productImages = productImages;
-	}
-	public List<ProductImage> getProductSingleImages() {
-		return productSingleImages;
-	}
-	public void setProductSingleImages(List<ProductImage> productSingleImages) {
-		this.productSingleImages = productSingleImages;
-	}
-	public List<ProductImage> getProductDetailImages() {
-		return productDetailImages;
-	}
-	public void setProductDetailImages(List<ProductImage> productDetailImages) {
-		this.productDetailImages = productDetailImages;
-	}
-	public int getReviewCount() {
-		return reviewCount;
-	}
-	public void setReviewCount(int reviewCount) {
-		this.reviewCount = reviewCount;
-	}
-	public int getSaleCount() {
-		return saleCount;
-	}
-	public void setSaleCount(int saleCount) {
-		this.saleCount = saleCount;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	private List<ProductImage> productSingleImages;
+	private List<ProductImage> productDetailImages;
+	private int reviewCount;
+	private int saleCount;
+
 	public String getName() {
 		return name;
 	}
@@ -104,5 +62,53 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String toString(){
+		return name;
+	}
+	public ProductImage getFirstProductImage() {
+		return firstProductImage;
+	}
+	public void setFirstProductImage(ProductImage firstProductImage) {
+		this.firstProductImage = firstProductImage;
+	}
+	public List<ProductImage> getProductImages() {
+		return productImages;
+	}
+	public void setProductImages(List<ProductImage> productImages) {
+		this.productImages = productImages;
+	}
+	public List<ProductImage> getProductSingleImages() {
+		return productSingleImages;
+	}
+	public void setProductSingleImages(List<ProductImage> productSingleImages) {
+		this.productSingleImages = productSingleImages;
+	}
+	public List<ProductImage> getProductDetailImages() {
+		return productDetailImages;
+	}
+	public void setProductDetailImages(List<ProductImage> productDetailImages) {
+		this.productDetailImages = productDetailImages;
+	}
+	public int getReviewCount() {
+		return reviewCount;
+	}
+	public void setReviewCount(int reviewCount) {
+		this.reviewCount = reviewCount;
+	}
+	public int getSaleCount() {
+		return saleCount;
+	}
+	public void setSaleCount(int saleCount) {
+		this.saleCount = saleCount;
+	}
+	
+	
 	
 }

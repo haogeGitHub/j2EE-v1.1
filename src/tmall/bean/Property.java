@@ -1,15 +1,19 @@
 package tmall.bean;
 
 public class Property {
-	private int id;
+
 	private String name;
-	private Category category;//属性所属分类
+	private Category category;
+	private int id;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}

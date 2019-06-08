@@ -1,5 +1,6 @@
 package tmall.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,12 +37,14 @@ public class OrderItemDAO {
  
     public void add(OrderItem bean) {
 
+
+
         String sql = "insert into OrderItem values(null,?,?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
  
             ps.setInt(1, bean.getProduct().getId());
             
-            //¶©µ¥ÏîÔÚ´´½¨µÄÊ±ºò£¬ÊÇÃ»ÓĞ¶©µ¥ĞÅÏ¢µÄ
+            //è®¢å•é¡¹åœ¨åˆ›å»ºçš„æ—¶å€™ï¼Œæ˜¯æ²¡æœ‰è’‚è®¢å•ä¿¡æ¯çš„
             if(null==bean.getOrder())
             	ps.setInt(2, -1);
             else
@@ -67,6 +70,7 @@ public class OrderItemDAO {
         String sql = "update OrderItem set pid= ?, oid=?, uid=?,number=?  where id = ?";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 
+
             ps.setInt(1, bean.getProduct().getId());
             if(null==bean.getOrder())
             	ps.setInt(2, -1);
@@ -75,6 +79,7 @@ public class OrderItemDAO {
             ps.setInt(3, bean.getUser().getId());
             ps.setInt(4, bean.getNumber());
             
+
             ps.setInt(5, bean.getId());
             ps.execute();
  
@@ -159,6 +164,7 @@ public class OrderItemDAO {
                 int oid = rs.getInt("oid");
                 int number = rs.getInt("number");
                 
+              
                 Product product = new ProductDAO().get(pid);
                 if(-1!=oid){
                     Order order= new OrderDAO().get(oid);
@@ -204,6 +210,7 @@ public class OrderItemDAO {
     			int uid = rs.getInt("uid");
     			int number = rs.getInt("number");
     			
+    			
     			Product product = new ProductDAO().get(pid);
     			if(-1!=oid){
     				Order order= new OrderDAO().get(oid);
@@ -238,6 +245,8 @@ public class OrderItemDAO {
 			o.setOrderItems(ois);
 			o.setTotalNumber(totalNumber);
 		}
+		
+		
 		
 	}
 
@@ -276,6 +285,7 @@ public class OrderItemDAO {
                 int oid = rs.getInt("oid");
                 int number = rs.getInt("number");
                 
+              
                 Product product = new ProductDAO().get(pid);
                 if(-1!=oid){
                     Order order= new OrderDAO().get(oid);

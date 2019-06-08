@@ -54,6 +54,8 @@ public class BaseServlet extends HttpServlet {
 				System.out.println(dir);
 			}else{
 				req.getRequestDispatcher(dir).forward(req, res);
+				//req.getRequestDispatcher(dir).forward(req, res);
+				//res.sendRedirect(dir);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
