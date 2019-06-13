@@ -13,8 +13,11 @@ import java.awt.image.RenderedImage;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
 
 public class ImageUtil {
 
@@ -62,5 +65,5 @@ public class ImageUtil {
 		}
 		return null;
 	}
-
+	
 }
